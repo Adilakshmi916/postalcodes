@@ -1,10 +1,8 @@
-package com.user.postalcodes.response;
+package com.user.postalcodes.model;
 
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import com.user.postalcodes.method.PostalDetails;
 
 public class PostalResponse {
 	@JsonProperty("Message")

@@ -1,4 +1,4 @@
-package com.user.postalcodes.serviceImpl;
+package com.user.postalcodes.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-
-import com.user.postalcodes.method.PostalDetails;
-import com.user.postalcodes.response.PostalResponse;
+import com.user.postalcodes.model.PostalDetails;
+import com.user.postalcodes.model.PostalResponse;
 
 @Service
 public class PostalServiceImpl implements Postal{

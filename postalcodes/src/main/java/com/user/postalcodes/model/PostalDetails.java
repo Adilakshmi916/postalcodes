@@ -1,4 +1,4 @@
-package com.user.postalcodes.method;
+package com.user.postalcodes.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
