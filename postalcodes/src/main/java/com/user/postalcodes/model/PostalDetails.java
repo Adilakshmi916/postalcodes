@@ -36,7 +36,10 @@ public class PostalDetails {
 		this.pincode = pincode;
 	}
 
-}
+	
+    }
+
+	
 	
 	
 

@@ -1,18 +1,13 @@
 package com.user.postalcodes.model;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PostalResponse {
+public class PostalUserDetails {
 	@JsonProperty("Message")
 	private String message;
 	
 	@JsonProperty("Status")
 	private String status;
-	
-	@JsonProperty("PostOffice")
-	private List<PostalUserDetails> postOffice;
 
 	public String getMessage() {
 		return message;
@@ -29,19 +24,6 @@ public class PostalResponse {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-	public List<PostalUserDetails> getPostOffice() {
-		return postOffice;
-	}
-
-	public void setPostOffice(List<PostalUserDetails> postOffice) {
-		this.postOffice = postOffice;
-	}
-
-	
-	}
-
-	
 	
 
-
+}
