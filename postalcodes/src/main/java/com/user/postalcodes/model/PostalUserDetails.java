@@ -13,8 +13,8 @@ public class PostalUserDetails {
 		return message;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setMessage(String postalResponse) {
+		this.message = postalResponse;
 	}
 
 	public String getStatus() {
@@ -24,6 +24,5 @@ public class PostalUserDetails {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
 
-}
+	}
