@@ -7,9 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
 
-@Data
+
 @Entity
 // Entity annotation specifies that the class is an entity
 //Table annotation specifies that table in the database with which this entity is mapped
@@ -28,5 +27,31 @@ public class Employee {
 	@Column(name="email")
 	private String email;
 	
-
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+    
+    public String getFirstname() {
+        return firstname;
+    }
+    public void setFirstName(String firstname) {
+        this.firstname = firstname;
+    }
+    
+    public String getLastname() {
+        return lastname;
+    }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+    
 }
