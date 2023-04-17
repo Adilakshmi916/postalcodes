@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.user.postalcodes.model.GenarationDetails;
 import com.user.postalcodes.model.PostalDetails;
 import com.user.postalcodes.model.PostalResponse;
 import com.user.postalcodes.model.PostalUserDetails;
 import com.user.postalcodes.model.ProductDetails;
+import com.user.postalcodes.model.RateDetails;
+import com.user.postalcodes.model.Results;
 import com.user.postalcodes.model.UserBody;
 import com.user.postalcodes.model.UserDetails;
 import com.user.postalcodes.model.UserTitle;
@@ -65,6 +68,24 @@ public class PostalController {
 	 //logger.info("user details is {}", posts);
     return ResponseEntity.status(HttpStatus.OK).body(postalServiceImpl.fetchProductDetailsById(num));
     
+}
+    @GetMapping(value = "/getproducts")
+    public ResponseEntity<RateDetails> getProducts(@RequestParam("num")int num){
+	 //logger.info("user details is {}", posts);
+    return ResponseEntity.status(HttpStatus.OK).body(postalServiceImpl.fetchRateDetailsById(num));
+    
+}
+    @GetMapping(value = "/genaration")
+    
+    public ResponseEntity<GenarationDetails> getDetails(@RequestParam("limit") int limit) {
+ 	   logger.info("The genaration details {}", limit);
+       return ResponseEntity.status(HttpStatus.OK).body(postalServiceImpl.fetchGenarationDetailsBylimit(limit));
+}
+   @GetMapping(value = "/getgenaration")
+    
+    public ResponseEntity<List<Results> >getResult(@RequestParam("limit") int limit) {
+ 	   logger.info("The genaration details {}", limit);
+       return ResponseEntity.status(HttpStatus.OK).body(postalServiceImpl.fetchResultDetailsBylimit(limit));
 }
 }
 

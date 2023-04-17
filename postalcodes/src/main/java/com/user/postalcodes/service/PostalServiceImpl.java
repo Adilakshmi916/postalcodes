@@ -8,10 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.user.postalcodes.model.GenarationDetails;
 import com.user.postalcodes.model.PostalDetails;
 import com.user.postalcodes.model.PostalResponse;
 import com.user.postalcodes.model.PostalUserDetails;
 import com.user.postalcodes.model.ProductDetails;
+import com.user.postalcodes.model.RateDetails;
+import com.user.postalcodes.model.Results;
 import com.user.postalcodes.model.UserBody;
 import com.user.postalcodes.model.UserDetails;
 import com.user.postalcodes.model.UserTitle;
@@ -107,6 +110,31 @@ public class PostalServiceImpl implements Postal{
 	
 
 	}
+	public RateDetails fetchRateDetailsById(int num) {
+		String url="https://fakestoreapi.com/products/"+num;
+		System.out.println("Url is:"+url);
+		ProductDetails userEntity=restTemplate.getForEntity (url, ProductDetails.class).getBody();
+		RateDetails rateDetails=new RateDetails();
+		rateDetails.setTitle(userEntity.getTitle());
+		rateDetails.setImage(userEntity.getImage());
+		rateDetails.setRate(userEntity.getRating().getRate());
+		return rateDetails;
+	
 }
+	public GenarationDetails fetchGenarationDetailsBylimit(int limit) {
+		String url="https://pokeapi.co/api/v2/generation?limit="+limit;
+		System.out.println("Url is:"+url);
+		GenarationDetails detailsEntity=restTemplate.getForEntity(url, GenarationDetails.class).getBody();
+		return detailsEntity;
+		}
+	public List<Results> fetchResultDetailsBylimit(int limit) {
+		String url="https://pokeapi.co/api/v2/generation?limit="+limit;
+		System.out.println("Url is:"+url);
+		GenarationDetails detailsEntity=restTemplate.getForEntity(url, GenarationDetails.class).getBody();
+		return detailsEntity.getResults();
+	
+}
+}
+
 	
 

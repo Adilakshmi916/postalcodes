@@ -1,26 +1,26 @@
 package com.user.postalcodes.model;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public  class ProductDetails {
 	@JsonProperty("id")
-	 private int id;
+	private int id;
 	
 	@JsonProperty("title")
-	 private String title;
+	private String title;
 	
 	@JsonProperty("price")
-	 private float price;
+	private float price;
 	
 	@JsonProperty("description")
-	 private String description;
+	private String description;
 	
 	@JsonProperty("category")
-	 private String category;
+	private String category;
 	
 	@JsonProperty("image")
-	 private String image;
-
+	private String image;
+	
 	public int getId() {
 		return id;
 	}
@@ -41,7 +41,7 @@ public  class ProductDetails {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
 
@@ -69,23 +69,17 @@ public  class ProductDetails {
 		this.image = image;
 	}
 	
-//	@JsonProperty("rating")
-//	private Rating rating;
-//
-//	public Rating getRating() {
-//		return rating;
-//	}
-//
-//	public void setRating(Rating rating) {
-//		this.rating = rating;
-//	}
+	@JsonProperty("rating")
+	private Rating rating;
 
-	public void setPrice(float price) {
-		this.price = price;
+	public Rating getRating() {
+		return rating;
 	}
-	
-    	
-    	
+
+	public void setRating(Rating rating) {
+		this.rating = rating;
+	}
+
 	}
     
 

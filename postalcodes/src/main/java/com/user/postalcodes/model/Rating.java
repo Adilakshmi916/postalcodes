@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Rating{
 	
-	//@JsonProperty("rate")
+	@JsonProperty("rate")
 	 private float rate;
 	
-	//@JsonProperty("count")
+	@JsonProperty("count")
 	 private int count;
 
 	public float getRate() {
