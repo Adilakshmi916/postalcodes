@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.http.HttpStatus;
+
 
 
 @Entity
@@ -26,6 +28,8 @@ public class Employee {
 	
 	@Column(name="email")
 	private String email;
+
+	
 	
     public String getEmail() {
         return email;
