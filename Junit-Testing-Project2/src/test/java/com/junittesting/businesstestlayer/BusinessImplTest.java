@@ -1,15 +1,15 @@
 package com.junittesting.businesstestlayer;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.junittesting.businesslayer.BusinessImpl;
 
-class BusinessImplTest {
+public class BusinessImplTest {
 
 	@Test
-	void calculateSum_basic() {
+	public void calculateSum_basic() {
 		BusinessImpl business=new BusinessImpl();
 		int actualValue=business.calculateSum(new int[] {1,2,3});
 		int expectValue=6;
@@ -17,7 +17,7 @@ class BusinessImplTest {
 		
 	}
 	@Test
-	void calculateSum_empty() {
+	public void calculateSum_empty() {
 		BusinessImpl business=new BusinessImpl();
 		int actualValue=business.calculateSum(new int[] {});
 		int expectValue=0;

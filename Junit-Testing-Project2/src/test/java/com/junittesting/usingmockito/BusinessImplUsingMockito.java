@@ -1,44 +1,46 @@
 package com.junittesting.usingmockito;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Mockito;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.junittesting.businesslayer.BusinessImpl;
-import com.junittesting.somedataservice.SomeDataService;
+import com.junittesting.businesslayer.SomeDataServiceImpl;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class BusinessImplUsingMockito {
 	
 	@InjectMocks
 	BusinessImpl business;
 	@Mock
-	SomeDataService dataServiceMock;
-	@BeforeEach
+	SomeDataServiceImpl someDataServiceImpl;
+	@Before
 	public void before() {
-		business.setSomeDataService(dataServiceMock);
+		
 	}
 	@Test
-	void calculateSumDataService_Basic() {
-		when(dataServiceMock.retriveAllData()).thenReturn(new int[] {1,2,3,4});
+	public void calculateSumDataService_Basic() {
+		Mockito.when(someDataServiceImpl.retriveAllData()).thenReturn(new int[] {1,2,3,4});
 		assertEquals(10,business.calculateSumDataService());
 		
 		}
-		private void assertEquals(int i, int calculateSumDataService) {
-		// TODO Auto-generated method stub
-		
-	}
+
 		@Test
-		void calculateSumDataService_Empty() {
-			when(dataServiceMock.retriveAllData()).thenReturn(new int[] {});
+		public void calculateSumDataService_Empty() {
+			when(someDataServiceImpl.retriveAllData()).thenReturn(new int[] {});
 			assertEquals(0,business.calculateSumDataService());
 			
-			}
+		}
 }
 	
 		

@@ -1,14 +1,17 @@
 package com.junittesting.businesslayer;
 
-import com.junittesting.somedataservice.SomeDataService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BusinessImpl {
 	
-	private SomeDataService someDataService;
+	@Autowired
+	private SomeDataServiceImpl someDataServiceImpl;
 	
-	public void setSomeDataService(SomeDataService someDataService) {
-		this.someDataService = someDataService;
-	}
+//	public void setSomeDataServiceImpl(SomeDataServiceImpl someDataServiceImpl) {
+//		this.someDataServiceImpl = someDataServiceImpl;
+//	}
 
 	public int calculateSum(int[] data) {
 		int sum=0;
@@ -19,7 +22,7 @@ public class BusinessImpl {
 	}
 	public int calculateSumDataService() {
 		int sum=0;
-		int[] data=someDataService.retriveAllData();
+		int[] data=someDataServiceImpl.retriveAllData();
 		for(int i:data) {
 			sum=sum+i;
 		}
